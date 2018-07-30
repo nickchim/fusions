@@ -1,10 +1,7 @@
 # Fusion_prioritization
 
 
-Pipeline to prioritize gene fusions coming from the STAR-Fusion workflow. Data can be found here
-
-
-https://drive.google.com/drive/folders/1iZ1on1exCrN-8k-5C1rC8QnCoG7wmcS2
+Pipeline to prioritize gene fusions coming from the STAR-Fusion workflow.
 
 
 Processed Data:
@@ -34,17 +31,23 @@ TICdb - http://www.unav.es/genetica/TICdb/
 ConjoinG - https://metasystems.riken.jp/conjoing/
 
 Target_List.tsv - Compilation of targetable genes and the applicable medication based on the DgiDB database
+Source: http://www.dgidb.org/downloads
 
 star_fusion_combo.tsv - The output of the combination of data sets from Fusion and Star Catchers. Outputted from the R script "star_catcher_combiner_small.R"/"star_catcher_combiner_big.R"
-
 star_fusion_analyzed - the output of the anaylisis of star_fusion_combo.tsv. Outputted from the R script star_catcher_analyzer3.R
 
 
 Code:
-CancerGeneCompilation.R - Composed CancerGeneList.txt which consists of a list of cancerous genes and a count of the studies in which they were found. The studies can be found in the comments of CancerGeneCompilation.R
+CancerGeneCompilation.R - Composes CancerGeneList.txt
 
-star_catcher_combiner_small.R - Takes in two files, one from Star, one from Fusion Catcher, and combines them into one coherent file with standarized data. 
+combiner1.R - Takes in two files, one from Star, one from Fusion Catcher, and combines them into one coherent file with standarized data. 
 
-star_catcher_combiner_big.R - Same as its predecessor, but adjusted for big data and a slightly different format. Working file. 
+analyzer3.R - Takes in output file of star_catcher_combiner, analyzes and outputs a new file with several more calculated variables.
 
-star_catcher_analyzer3.R - Takes in output file of star_catcher_combiner, analyzes and outputs a new file with several more calculated variables.
+domainListMaker.R - Composes Domain_List.tsv
+
+fusionCollecter2.R - Composes FusionList2.txt
+
+Target_Gene_Maker.R - Composes Target_List.tsv
+
+getPFAMDomain.R - Used in anaylyzer3.R for domain anaylisis
